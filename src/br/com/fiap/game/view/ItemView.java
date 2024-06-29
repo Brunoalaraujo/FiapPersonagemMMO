@@ -1,6 +1,10 @@
+package br.com.fiap.game.view;
+
+import br.com.fiap.game.model.Item;
+
 import java.util.Scanner;
 
-public class ItemVew {
+public class ItemView {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Item item = new Item();
@@ -18,14 +22,11 @@ public class ItemVew {
                     boolean raro = sc.nextBoolean();
                     System.out.println("Digite o nível do item: ");
                     int nivelPoder = sc.nextInt();
-                    item.nome = nome;
-                    item.descricao = descricao;
-                    item.raro = raro;
-                    item.nivelPoder = nivelPoder;
+                    item.setNome(nome).setDescricao(descricao).setRaro(raro).setNivelPoder(nivelPoder);
                     break;
                 case 2:
                     if (item != null) {
-                        System.out.println("Nome: " + item.nome + " Descrição: " + item.descricao + " Raro: " + item.raro + " Nivel de Poder: " + item.nivelPoder);
+                        System.out.println("Nome: " + item.getNome() + " Descrição: " + item.getDescricao() + " Raro: " + item.isRaro() + " Nivel de Poder: " + item.getNivelPoder());
                     } else {
                         System.out.println("Nenhum item foi Cadastrado!");
                     }
